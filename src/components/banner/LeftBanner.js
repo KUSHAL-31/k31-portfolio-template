@@ -5,7 +5,7 @@ import { SiTailwindcss, SiFigma, SiNextdotjs } from "react-icons/si";
 
 const LeftBanner = ({ portfolioData }) => {
   const [text] = useTypewriter({
-    words: ["Professional Coder.", "Full Stack Developer.", "UI Designer."],
+    words: portfolioData?.userMetaData.roles,
     loop: true,
     typeSpeed: 20,
     deleteSpeed: 10,
@@ -16,7 +16,7 @@ const LeftBanner = ({ portfolioData }) => {
       <div className="flex flex-col gap-5">
         <h4 className=" text-lg font-normal">WELCOME TO MY WORLD</h4>
         <h1 className="text-6xl font-bold text-white">
-          Hi, I'm <span className="text-designColor capitalize">{portfolioData?.username}</span>
+          Hi, I'm <span className="text-designColor capitalize">{portfolioData?.user?.username}</span>
         </h1>
         <h2 className="text-4xl font-bold text-white">
           a <span>{text}</span>
@@ -27,9 +27,7 @@ const LeftBanner = ({ portfolioData }) => {
           />
         </h2>
         <p className="text-base font-bodyFont leading-6 tracking-wide">
-          I use animation as a third dimension by which to simplify experiences
-          and kuiding thro each and every interaction. I'm not adding motion
-          just to spruce things up, but doing it in ways that.
+          {portfolioData?.userMetaData?.description}
         </p>
       </div>
       <div className="flex flex-col xl:flex-row gap-6 lgl:gap-0 justify-between">

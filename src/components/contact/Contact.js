@@ -1,8 +1,9 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import Title from '../layouts/Title';
 import ContactLeft from './ContactLeft';
 
-const Contact = () => {
+const Contact = ({ portfolioData }) => {
+
   const [username, setUsername] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [email, setEmail] = useState("");
@@ -45,6 +46,7 @@ const Contact = () => {
       setMessage("");
     }
   };
+  if (portfolioData.userMetaData.contactMeEnabled === false) return <></>;
   return (
     <section
       id="contact"
@@ -76,10 +78,9 @@ const Contact = () => {
                   <input
                     onChange={(e) => setUsername(e.target.value)}
                     value={username}
-                    className={`${
-                      errMsg === "Username is required!" &&
+                    className={`${errMsg === "Username is required!" &&
                       "outline-designColor"
-                    } contactInput`}
+                      } contactInput`}
                     type="text"
                   />
                 </div>
@@ -90,10 +91,9 @@ const Contact = () => {
                   <input
                     onChange={(e) => setPhoneNumber(e.target.value)}
                     value={phoneNumber}
-                    className={`${
-                      errMsg === "Phone number is required!" &&
+                    className={`${errMsg === "Phone number is required!" &&
                       "outline-designColor"
-                    } contactInput`}
+                      } contactInput`}
                     type="text"
                   />
                 </div>
@@ -105,10 +105,9 @@ const Contact = () => {
                 <input
                   onChange={(e) => setEmail(e.target.value)}
                   value={email}
-                  className={`${
-                    errMsg === "Please give your Email!" &&
+                  className={`${errMsg === "Please give your Email!" &&
                     "outline-designColor"
-                  } contactInput`}
+                    } contactInput`}
                   type="email"
                 />
               </div>
@@ -119,10 +118,9 @@ const Contact = () => {
                 <input
                   onChange={(e) => setSubject(e.target.value)}
                   value={subject}
-                  className={`${
-                    errMsg === "Plese give your Subject!" &&
+                  className={`${errMsg === "Plese give your Subject!" &&
                     "outline-designColor"
-                  } contactInput`}
+                    } contactInput`}
                   type="text"
                 />
               </div>
@@ -133,9 +131,8 @@ const Contact = () => {
                 <textarea
                   onChange={(e) => setMessage(e.target.value)}
                   value={message}
-                  className={`${
-                    errMsg === "Message is required!" && "outline-designColor"
-                  } contactTextArea`}
+                  className={`${errMsg === "Message is required!" && "outline-designColor"
+                    } contactTextArea`}
                   cols="30"
                   rows="8"
                 ></textarea>

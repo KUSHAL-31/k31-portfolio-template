@@ -24,9 +24,4 @@ export const navLinksdata = [
     title: "Testimonial",
     link: "testimonial",
   },
-  {
-    _id: 1006,
-    title: "Contact",
-    link: "contact",
-  },
 ];

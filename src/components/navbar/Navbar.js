@@ -3,11 +3,12 @@ import { Link } from "react-scroll";
 import { FiMenu } from "react-icons/fi";
 import { MdClose } from "react-icons/md";
 import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
-import {logo} from "../../assets/index"
+import { logo } from "../../assets/index"
 import { navLinksdata } from '../../constants';
 
-const Navbar = () => {
-  const [showMenu, setShowMenu]=useState(false)
+const Navbar = ({ portfolioData }) => {
+  console.log(portfolioData.userMetaData.contactMeEnabled);
+  const [showMenu, setShowMenu] = useState(false)
   return (
     <div className="w-full h-24 sticky top-0 z-50 bg-bodyColor mx-auto flex justify-between items-center font-titleFont border-b-[1px] border-b-gray-600">
       <div>
@@ -28,10 +29,22 @@ const Navbar = () => {
                 offset={-70}
                 duration={500}
               >
+
                 {title}
               </Link>
             </li>
           ))}
+          {portfolioData.userMetaData.contactMeEnabled && <Link
+            activeClass="active"
+            to={"contact"}
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+          >
+
+            {"Contact"}
+          </Link>}
         </ul>
         <span
           onClick={() => setShowMenu(!showMenu)}

@@ -5,7 +5,7 @@ import { SiProgress, SiAntdesign } from "react-icons/si";
 import Title from '../layouts/Title';
 import Card from './Card';
 
-const Features = () => {
+const Features = ({ portfolioData }) => {
   return (
     <section
       id="features"
@@ -17,7 +17,7 @@ const Features = () => {
           title="Business Stratagy"
           des="Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque soluta
           hic consequuntur eum repellendus ad."
-         
+
         />
         <Card
           title="App Development"

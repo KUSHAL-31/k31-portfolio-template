@@ -3,7 +3,7 @@ import Title from '../layouts/Title'
 import { projectOne, projectTwo, projectThree } from "../../assets/index";
 import ProjectsCard from './ProjectsCard';
 
-const Projects = () => {
+const Projects = ({ portfolioData }) => {
   return (
     <section
       id="projects"
