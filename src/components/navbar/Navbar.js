@@ -7,7 +7,6 @@ import { logo } from "../../assets/index"
 import { navLinksdata } from '../../constants';
 
 const Navbar = ({ portfolioData }) => {
-  console.log(portfolioData.userMetaData.contactMeEnabled);
   const [showMenu, setShowMenu] = useState(false)
   return (
     <div className="w-full h-24 sticky top-0 z-50 bg-bodyColor mx-auto flex justify-between items-center font-titleFont border-b-[1px] border-b-gray-600">
@@ -34,17 +33,19 @@ const Navbar = ({ portfolioData }) => {
               </Link>
             </li>
           ))}
-          {portfolioData.userMetaData.contactMeEnabled && <Link
-            activeClass="active"
-            to={"contact"}
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-          >
+          {portfolioData.userMetaData.contactMeEnabled && <li className="text-base font-normal text-gray-400 tracking-wide cursor-pointer hover:text-designColor duration-300">
+            <Link
+              activeClass="active"
+              to={"contact"}
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
 
-            {"Contact"}
-          </Link>}
+              {"Contact"}
+            </Link>
+          </li>}
         </ul>
         <span
           onClick={() => setShowMenu(!showMenu)}
