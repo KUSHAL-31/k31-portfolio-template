@@ -14,7 +14,7 @@ const Experience = () => {
           <p className="text-sm text-designColor tracking-[4px]">2010 - 2022</p>
           <h2 className="text-3xl md:text-4xl font-bold">Job Experience</h2>
         </div>
-        <div className="mt-6 lgl:mt-14 w-full h-[1000px] border-l-[6px] border-l-black border-opacity-30 flex flex-col gap-10">
+        <div className="mt-6 lgl:mt-14 w-full border-l-[6px] border-l-black border-opacity-30 flex flex-col gap-10">
           <ResumeCard
             title="Sr. Software Engineer"
             subTitle="Google Out Tech - (2017 - Present)"
@@ -26,6 +26,24 @@ const Experience = () => {
             subTitle="Apple Developer Team - (2012 - 2016)"
             result="MALAYSIA"
             des="A popular destination with a growing number of highly qualified homegrown graduates, it's true that securing a role in Malaysia isn't easy."
+          />
+          <ResumeCard
+            title="Front-end Developer"
+            subTitle="Nike - (2020 - 2011)"
+            result="Oman"
+            des="The Oman economy has grown strongly over recent years, having transformed itself from a producer and innovation-based economy."
+          />
+          <ResumeCard
+            title="Front-end Developer"
+            subTitle="Nike - (2020 - 2011)"
+            result="Oman"
+            des="The Oman economy has grown strongly over recent years, having transformed itself from a producer and innovation-based economy."
+          />
+          <ResumeCard
+            title="Front-end Developer"
+            subTitle="Nike - (2020 - 2011)"
+            result="Oman"
+            des="The Oman economy has grown strongly over recent years, having transformed itself from a producer and innovation-based economy."
           />
           <ResumeCard
             title="Front-end Developer"

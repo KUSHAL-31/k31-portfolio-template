@@ -30,7 +30,7 @@ const LeftBanner = ({ portfolioData }) => {
           {portfolioData?.userMetaData?.description}
         </p>
       </div>
-      <div className="flex flex-col xl:flex-row gap-6 lgl:gap-0 justify-between">
+      <div className="flex flex-col xl:flex-row gap-6 lgl:gap-40">
         <div>
           <h2 className="text-base uppercase font-titleFont mb-4">
             Find me in
@@ -49,22 +49,14 @@ const LeftBanner = ({ portfolioData }) => {
         </div>
         <div>
           <h2 className="text-base uppercase font-titleFont mb-4">
-            BEST SKILL ON
+            My Resume
           </h2>
-          <div className="flex gap-4">
-            <span className="bannerIcon">
-              <FaReact />
-            </span>
-            <span className="bannerIcon">
-              <SiNextdotjs />
-            </span>
-            <span className="bannerIcon">
-              <SiTailwindcss />
-            </span>
-            <span className="bannerIcon">
-              <SiFigma />
-            </span>
-          </div>
+          <button
+            onClick={() => window.open(portfolioData?.userMetaData.resume, "_blank")}
+            className="px-12 h-12 bg-[#141518] rounded-lg text-base text-gray-400 tracking-wider uppercase hover:text-white duration-300 hover:border-[1px] hover:border-designColor border-transparent"
+          >
+            View
+          </button>
         </div>
       </div>
     </div>

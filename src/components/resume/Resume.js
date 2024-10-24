@@ -3,12 +3,12 @@ import Title from '../layouts/Title';
 import Education from './Education';
 import Skills from './Skills';
 // import Achievement from './Achievement';
-import Experience from "./Experience"
+// import Experience from "./Experience"
 
 const Resume = ({ portfolioData }) => {
-  const [educationData, setEducationData] = useState(true);
+  const [eduAndExpData, setEduAndExpData] = useState(true);
   const [skillData, setSkillData] = useState(false);
-  const [experienceData, setExperienceData] = useState(false);
+  // const [experienceData, setExperienceData] = useState(false);
   // const [achievementData, setAchievementData] = useState(false);
   return (
     <section id="resume" className="w-full py-20 border-b-[1px] border-b-black">
@@ -16,26 +16,28 @@ const Resume = ({ portfolioData }) => {
         <Title title="Know more" des="About me" />
       </div>
       <div>
-        <ul className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+        <ul className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2">
           <li
             onClick={() =>
-              setEducationData(true) &
-              setSkillData(false) &
-              setExperienceData(false)
+              setEduAndExpData(true) &
+              setSkillData(false)
+              // &
+              // setExperienceData(false)
               // & setAchievementData(false)
             }
-            className={`${educationData
+            className={`${eduAndExpData
               ? "border-designColor rounded-lg"
               : "border-transparent"
               } resumeLi`}
           >
-            Education
+            Education & Experience
           </li>
           <li
             onClick={() =>
-              setEducationData(false) &
-              setSkillData(true) &
-              setExperienceData(false)
+              setEduAndExpData(false) &
+              setSkillData(true)
+              // &
+              // setExperienceData(false)
               // & setAchievementData(false)
             }
             className={`${skillData ? "border-designColor rounded-lg" : "border-transparent"
@@ -43,11 +45,12 @@ const Resume = ({ portfolioData }) => {
           >
             Professional Skills
           </li>
-          <li
+          {/* <li
             onClick={() =>
-              setEducationData(false) &
-              setSkillData(false) &
-              setExperienceData(true)
+              setEduAndExpData(false) &
+              setSkillData(false)
+              // &
+              // setExperienceData(true)
               // & setAchievementData(false)
             }
             className={`${experienceData
@@ -56,10 +59,10 @@ const Resume = ({ portfolioData }) => {
               } resumeLi`}
           >
             Experience
-          </li>
+          </li> */}
           {/* <li
             onClick={() =>
-              setEducationData(false) &
+              setEduAndExpData(false) &
               setSkillData(false) &
               setExperienceData(false) &
               setAchievementData(true)
@@ -73,10 +76,10 @@ const Resume = ({ portfolioData }) => {
           </li> */}
         </ul>
       </div>
-      {educationData && <Education educationDetails={portfolioData.userExpEdu.education} />}
+      {eduAndExpData && <Education educations={portfolioData.userExpEdu.education} experiences={portfolioData.userExpEdu.experience} />}
       {skillData && <Skills skills={portfolioData.userSkills.skillSection} />}
       {/* {achievementData && <Achievement />} */}
-      {experienceData && <Experience experienceDetails={portfolioData.userExpEdu.experience} />}
+      {/* {experienceData && <Experience experienceDetails={portfolioData.userExpEdu.experience} />} */}
 
     </section>
   );
