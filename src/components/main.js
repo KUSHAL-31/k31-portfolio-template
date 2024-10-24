@@ -12,6 +12,8 @@ import Projects from "./projects/Projects";
 import Resume from "./resume/Resume";
 import Testimonial from "./tesimonial/Testimonial";
 import { PortfolioContext } from '../contexts/PortfolioContext';
+import NoPortfolioFound from './notFound/NoPortfolioFound';
+import Loader from '../utils/Loader';
 
 
 const PortfolioWebsite = () => {
@@ -44,7 +46,7 @@ const PortfolioWebsite = () => {
 
     return (
         <div className="w-full h-auto bg-bodyColor text-lightText px-4">
-            {isLoading ? <div className="w-full h-screen flex justify-center items-center">Loading...</div> : (
+            {isLoading ? <Loader /> : (
                 <>
                     {!userNotFound ? <div className="max-w-screen-xl mx-auto">
                         <Navbar />
@@ -56,9 +58,7 @@ const PortfolioWebsite = () => {
                         <Contact />
                         <Footer />
                         <FooterBottom />
-                    </div> : <div className="w-full h-screen flex justify-center items-center">
-                        <h1 className="text-3xl">No Portfolio exists with this domain</h1>
-                    </div>}
+                    </div> : <NoPortfolioFound />}
                 </>
             )}
         </div>
