@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaReact } from "react-icons/fa";
-import { SiTailwindcss, SiFigma, SiNextdotjs } from "react-icons/si";
+import { PortfolioContext } from '../../contexts/PortfolioContext';
 
-const LeftBanner = ({ portfolioData }) => {
+const LeftBanner = () => {
+
+  const { portfolioData } = useContext(PortfolioContext);
+
   const [text] = useTypewriter({
     words: portfolioData?.userMetaData.roles,
     loop: true,

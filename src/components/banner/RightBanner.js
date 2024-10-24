@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { bannerImg } from "../../assets/index";
+import { PortfolioContext } from '../../contexts/PortfolioContext';
 
-const RightBanner = ({ portfolioData }) => {
+const RightBanner = () => {
+
+  const { portfolioData } = useContext(PortfolioContext);
+
   return (
     <div className="w-full lgl:w-1/2 flex justify-center items-center relative">
       <img

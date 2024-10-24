@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Slider from "react-slick";
 import { RiStarFill } from "react-icons/ri";
 import { HiArrowRight, HiArrowLeft } from "react-icons/hi";
 import Title from '../layouts/Title'
-import { testimonialOne, testimonialTwo, quote, defaultPerson } from "../../assets";
+import { quote, defaultPerson } from "../../assets";
 import { formatDate } from '../../utils/helper';
+import { PortfolioContext } from '../../contexts/PortfolioContext';
 
 
 function SampleNextArrow(props) {
@@ -31,7 +32,10 @@ function SamplePrevArrow(props) {
   );
 }
 
-const Testimonial = ({ portfolioData }) => {
+const Testimonial = () => {
+
+  const { portfolioData } = useContext(PortfolioContext);
+
   const testimonials = portfolioData.userTestimonials.testimonials;
   console.log(testimonials);
   const [dotActive, setDocActive] = useState(0);
@@ -103,7 +107,7 @@ const Testimonial = ({ portfolioData }) => {
         <Slider {...settings}>
           {
             testimonials.map((testimonial, index) => (
-              <div className="w-full">
+              <div className="w-full" key={index}>
                 <div className="w-full h-auto flex flex-col lgl:flex-row justify-between">
                   <div className="w-full lgl:w-[35%] h-full bg-gradient-to-r from-[#1e2024] to-[#23272b] p-8 rounded-lg shadow-shadowOne flex flex-col md:flex-row lgl:flex-col gap-8 justify-center md:justify-start lgl:justify-center">
                     <img

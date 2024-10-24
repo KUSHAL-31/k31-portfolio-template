@@ -1,8 +1,11 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Title from '../layouts/Title';
 import ContactLeft from './ContactLeft';
+import { PortfolioContext } from '../../contexts/PortfolioContext';
 
-const Contact = ({ portfolioData }) => {
+const Contact = () => {
+
+  const { portfolioData } = useContext(PortfolioContext);
 
   const [username, setUsername] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");

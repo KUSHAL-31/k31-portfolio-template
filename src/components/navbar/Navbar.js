@@ -1,12 +1,16 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link } from "react-scroll";
 import { FiMenu } from "react-icons/fi";
 import { MdClose } from "react-icons/md";
 import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
 import { logo } from "../../assets/index"
 import { navLinksdata } from '../../constants';
+import { PortfolioContext } from '../../contexts/PortfolioContext';
 
-const Navbar = ({ portfolioData }) => {
+const Navbar = () => {
+
+  const { portfolioData } = useContext(PortfolioContext);
+
   const [showMenu, setShowMenu] = useState(false)
   return (
     <div className="w-full h-24 sticky top-0 z-50 bg-bodyColor mx-auto flex justify-between items-center font-titleFont border-b-[1px] border-b-gray-600">

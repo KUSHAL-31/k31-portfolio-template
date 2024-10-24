@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Title from '../layouts/Title'
 import ProjectsCard from './ProjectsCard';
+import { PortfolioContext } from '../../contexts/PortfolioContext';
 
-const Projects = ({ portfolioData }) => {
+const Projects = () => {
+
+  const { portfolioData } = useContext(PortfolioContext);
+
   return (
     <section
       id="projects"

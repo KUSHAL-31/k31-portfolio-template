@@ -1,11 +1,15 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Title from '../layouts/Title';
 import Education from './Education';
 import Skills from './Skills';
+import { PortfolioContext } from '../../contexts/PortfolioContext';
 // import Achievement from './Achievement';
 // import Experience from "./Experience"
 
-const Resume = ({ portfolioData }) => {
+const Resume = () => {
+
+  const { portfolioData } = useContext(PortfolioContext);
+
   const [eduAndExpData, setEduAndExpData] = useState(true);
   const [skillData, setSkillData] = useState(false);
   // const [experienceData, setExperienceData] = useState(false);

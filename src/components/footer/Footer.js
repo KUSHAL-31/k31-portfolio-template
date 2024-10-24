@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
 import { logo } from "../../assets/index"
+import { PortfolioContext } from '../../contexts/PortfolioContext';
 
-const Footer = ({ portfolioData }) => {
+const Footer = () => {
+
+  const { portfolioData } = useContext(PortfolioContext);
+
   return (
     <div className="w-full py-20 h-auto border-b-[1px] border-b-black grid grid-cols-1 md:grid-cols-2 lgl:grid-cols-4 gap-8">
       <div className="w-full h-full flex flex-col gap-8">
