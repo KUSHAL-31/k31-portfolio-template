@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { useTypewriter, Cursor } from "react-simple-typewriter";
-import { FaFacebookF, FaTwitter, FaLinkedinIn, FaReact } from "react-icons/fa";
+import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
 import { PortfolioContext } from '../../contexts/PortfolioContext';
 
 const LeftBanner = () => {
