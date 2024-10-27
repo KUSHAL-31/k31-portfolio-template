@@ -3,9 +3,7 @@ import { checkPortfolioExistsOrNotUrl, getPortfolioDetailsUrl } from "./api"
 
 export const checkPortfolioExistsOrNot = async (websiteName) => {
     try {
-        const res = await axios.post(checkPortfolioExistsOrNotUrl, {
-            withCredentials: true,
-        },
+        const res = await axios.post(checkPortfolioExistsOrNotUrl,
             { websiteName: websiteName }
         );
         if (res.status === 200) {
@@ -18,9 +16,7 @@ export const checkPortfolioExistsOrNot = async (websiteName) => {
 
 export const getPortfolioDetailsById = async (portfolioId) => {
     try {
-        const res = await axios.post(getPortfolioDetailsUrl, {
-            withCredentials: true,
-        },
+        const res = await axios.post(getPortfolioDetailsUrl,
             { portfolioId: portfolioId }
         );
         if (res.status === 200) {
