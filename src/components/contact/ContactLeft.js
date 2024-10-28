@@ -1,12 +1,16 @@
 import React from 'react'
 import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
+import { defaultPerson } from "../../assets";
 
 const ContactLeft = ({ portfolioData }) => {
+
+  const imageUrl = portfolioData?.userMetaData?.images.length === 2 ? portfolioData?.userMetaData?.images[1].url : portfolioData?.userMetaData?.images.length === 1 ? portfolioData?.userMetaData?.images[0].url : defaultPerson;
+
   return (
     <div className="w-full lgl:w-[35%] h-full bg-gradient-to-r from-[#1e2024] to-[#23272b] p-4 lgl:p-8 rounded-lg shadow-shadowOne flex flex-col gap-8 justify-center">
       <img
         className="w-full h-64 rounded-lg mb-2 object-contain"
-        src={portfolioData.user.avatar}
+        src={imageUrl}
         alt="contactImg"
       />
       <div className="flex flex-col gap-4">
