@@ -5,16 +5,20 @@ import { MdClose } from "react-icons/md";
 import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
 import { navLinksdata } from '../../constants';
 import { PortfolioContext } from '../../contexts/PortfolioContext';
+import { defaultPerson } from "../../assets";
+
 
 const Navbar = () => {
 
   const { portfolioData } = useContext(PortfolioContext);
 
+  const logoUrl = portfolioData?.portfolio?.logo?.url || defaultPerson
+
   const [showMenu, setShowMenu] = useState(false)
   return (
     <div className="w-full h-24 sticky top-0 z-50 bg-bodyColor mx-auto flex justify-between items-center font-titleFont border-b-[1px] border-b-gray-600">
       <div className='flex flex-row justify-center items-center gap-5'>
-        <img src={portfolioData?.portfolio?.logo?.url} className='w-12 h-12' alt="logo" />
+        <img src={logoUrl} className='w-12 h-12' alt="logo" />
         <p className='base text-xl text-designColor w'>
           {portfolioData?.portfolio?.headerTitle}
         </p>
