@@ -5,7 +5,7 @@ import { defaultPerson } from "../../assets";
 const RightBanner = () => {
 
   const { portfolioData } = useContext(PortfolioContext);
-  const imageUrl = portfolioData?.userMetaData?.images[0].url || defaultPerson;
+  const imageUrl = portfolioData?.userMetaData?.images[0]?.url || defaultPerson;
 
 
   return (
